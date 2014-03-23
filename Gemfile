@@ -51,7 +51,7 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem "blacklight", ">= 5.3.0"
+gem "blacklight", github: 'projectblacklight/blacklight'
 gem "jettywrapper", "~> 1.7"
 gem "devise"
 gem "devise-guests", "~> 0.3"

@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/projectblacklight/blacklight.git
+  revision: 2449c023c10e89687897ca5826a7c71f2aef43a4
+  specs:
+    blacklight (5.3.0)
+      bootstrap-sass (~> 3.0)
+      deprecation
+      kaminari (~> 0.13)
+      nokogiri (~> 1.6)
+      rails (>= 3.2.6, < 5)
+      rsolr (~> 1.0.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -28,13 +40,6 @@ GEM
     arel (4.0.2)
     atomic (1.1.16)
     bcrypt (3.1.7)
-    blacklight (5.3.0)
-      bootstrap-sass (~> 3.0)
-      deprecation
-      kaminari (~> 0.13)
-      nokogiri (~> 1.6)
-      rails (>= 3.2.6, < 5)
-      rsolr (~> 1.0.6)
     blacklight-marc (5.0.0)
       blacklight (~> 5.0)
       marc (>= 0.4.3, < 1.1)
@@ -168,7 +173,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  blacklight (>= 5.3.0)
+  blacklight!
   blacklight-marc (~> 5.0)
   coffee-rails (~> 4.0.0)
   devise
