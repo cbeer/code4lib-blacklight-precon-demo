@@ -14,6 +14,8 @@ class CatalogController < ApplicationController
       fl: '*'
     }
     
+    config.per_page = []
+    
     ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or 
     ## parameters included in the Blacklight-jetty document requestHandler.
     #
@@ -23,24 +25,10 @@ class CatalogController < ApplicationController
     config.document_solr_path = 'get'
     config.document_unique_id_param = 'ids'
 
-    # solr path which will be added to solr base url before the other solr params.
-    #config.solr_path = 'select' 
-    
-    # items to show per page, each number in the array represent another option to choose from.
-    #config.per_page = [10,20,50,100]
-
     # solr field configuration for search results/index views
     config.index.title_field = 'title_t'
-    config.index.display_type_field = 'format'
 
-    # Have BL send all facet field names to Solr, which has been the default
-    # previously. Simply remove these lines if you'd rather use Solr request
-    # handler defaults, or have no facets.
-    config.add_facet_fields_to_solr_request!
- 
-    config.add_search_field 'all_fields', :label => 'All Fields'
-
-    config.add_sort_field 'score desc', :label => 'relevance'
+    config.add_fields_to_solr_request!
   end
 
 end 
