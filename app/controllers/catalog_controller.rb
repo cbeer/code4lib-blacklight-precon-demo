@@ -1,8 +1,6 @@
 # -*- encoding : utf-8 -*-
 #
 class CatalogController < ApplicationController  
-  include Blacklight::Marc::Catalog
-
   include Blacklight::Catalog
 
   configure_blacklight do |config|
@@ -20,8 +18,10 @@ class CatalogController < ApplicationController
     ## parameters included in the Blacklight-jetty document requestHandler.
     #
     config.default_document_solr_params = {
-      solr_path: '/document'
     }
+    
+    config.document_solr_path = 'get'
+    config.document_unique_id_param = 'ids'
 
     # solr path which will be added to solr base url before the other solr params.
     #config.solr_path = 'select' 
