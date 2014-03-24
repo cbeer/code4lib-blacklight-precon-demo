@@ -36,6 +36,12 @@ class CatalogController < ApplicationController
     
     config.show_fields.merge!(config.index_fields)
     
+    config.add_show_field 'creditLine_t', label: "Credit"
+    config.add_show_field 'thumbnailCopyright_s', label: "Thumbnail credit"
+    config.add_show_field 'acquisitionYear_s', label: "Acquired"
+    config.add_show_field 'accession_number_s', label: "Accession number"
+    
+    
     # 'all fields' performs the default search given above
     config.add_search_field 'All Fields'
     
