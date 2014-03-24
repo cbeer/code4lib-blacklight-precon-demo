@@ -25,6 +25,7 @@ class CatalogController < ApplicationController
 
     # solr field configuration for search results/index views
     config.index.title_field = 'title_t'
+    config.index.thumbnail_field = 'thumbnailUrl_s'
     
     config.per_page = [10,20,50,100]
     config.default_per_page = 20
