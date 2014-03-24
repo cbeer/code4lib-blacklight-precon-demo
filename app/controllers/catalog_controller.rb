@@ -14,8 +14,6 @@ class CatalogController < ApplicationController
       fl: '*'
     }
     
-    config.per_page = []
-    
     ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or 
     ## parameters included in the Blacklight-jetty document requestHandler.
     #
@@ -27,6 +25,9 @@ class CatalogController < ApplicationController
 
     # solr field configuration for search results/index views
     config.index.title_field = 'title_t'
+    
+    config.per_page = [10,20,50,100]
+    config.default_per_page = 20
 
     config.add_fields_to_solr_request!
   end
