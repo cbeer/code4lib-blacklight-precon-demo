@@ -33,7 +33,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'artist_t', label: "Artist", accessor: :artist_name
     config.add_index_field 'medium_s', label: "Medium"
     config.add_index_field 'dimensions_s', label: "Dimensions", helper_method: :render_dimension_values
-    config.add_index_field 'year_s', label: "Year"
+    config.add_index_field 'year_s', label: "Year", link_to_search: true
     
     config.show_fields.merge!(config.index_fields)
     
