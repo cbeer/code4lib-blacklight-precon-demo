@@ -29,6 +29,13 @@ class CatalogController < ApplicationController
     config.per_page = [10,20,50,100]
     config.default_per_page = 20
     
+    config.add_index_field 'artist_t', label: "Artist"
+    config.add_index_field 'medium_s', label: "Medium"
+    config.add_index_field 'dimensions_s', label: "Dimensions"
+    config.add_index_field 'year_s', label: "Year"
+    
+    config.show_fields.merge!(config.index_fields)
+    
     # 'all fields' performs the default search given above
     config.add_search_field 'All Fields'
     
