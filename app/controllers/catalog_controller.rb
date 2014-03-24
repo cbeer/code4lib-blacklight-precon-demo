@@ -28,6 +28,18 @@ class CatalogController < ApplicationController
     
     config.per_page = [10,20,50,100]
     config.default_per_page = 20
+    
+    # 'all fields' performs the default search given above
+    config.add_search_field 'All Fields'
+    
+    # A title search, configured using the hash syntax
+    config.add_search_field 'Title', solr_parameters: { qf: 'title_t' }
+
+    # For some configuration, the block-based syntax may be better
+    config.add_search_field 'Artist' do |field|
+      field.solr_parameters = { qf: 'artist_t' }
+    end
+    
 
     config.add_fields_to_solr_request!
   end
