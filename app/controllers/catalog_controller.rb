@@ -41,6 +41,11 @@ class CatalogController < ApplicationController
     config.add_show_field 'acquisitionYear_s', label: "Acquired"
     config.add_show_field 'accession_number_s', label: "Accession number"
     
+    config.add_facet_field 'year_s', label: "Year", sort: 'index', limit: 500
+    config.add_facet_field 'medium_s', label: "Medium", limit: 20
+
+    # if we indexed the artist without tokenizing it, we could do this
+    # config.add_facet_field 'artist_t', label: "Artist"
     
     # 'all fields' performs the default search given above
     config.add_search_field 'All Fields'
@@ -61,6 +66,7 @@ class CatalogController < ApplicationController
     # config.add_sort_field 'title', sort: 'title_t asc, id asc', label: 'title'
 
     config.add_fields_to_solr_request!
+    config.add_facet_fields_to_solr_request!
   end
 
 end 
