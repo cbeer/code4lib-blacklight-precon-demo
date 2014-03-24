@@ -40,6 +40,12 @@ class CatalogController < ApplicationController
       field.solr_parameters = { qf: 'artist_t' }
     end
     
+    config.add_sort_field 'relevancy', sort: 'score desc', label: 'relevancy'
+    config.add_sort_field 'id', sort: 'id asc', label: 'identifier'
+    config.add_sort_field 'year', sort: 'year_s asc, id asc', label: 'year'
+    config.add_sort_field 'width', sort: 'width_s asc', label: 'width'
+    # the schema doesn't have a single-valued sort field, or we could do something like:
+    # config.add_sort_field 'title', sort: 'title_t asc, id asc', label: 'title'
 
     config.add_fields_to_solr_request!
   end
